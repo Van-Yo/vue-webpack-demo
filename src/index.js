@@ -18,3 +18,6 @@ new Vue({
     countRem();
     window.onresize = countRem;
 })();
+if (module.hot) {
+    module.hot.accept();
+}

@@ -24,6 +24,7 @@ class webpackUtils{
         let config = {};
         config.alias = this.getProjectAlias();
         config.env = this.ENV;
+        config.compressFlag = this.getCompressFlag();
         return config;
     }
     /**
@@ -33,6 +34,14 @@ class webpackUtils{
         return {
             ENV: JSON.stringify(this.ENV),
         };
+    }
+    /**
+     * 依据环境判断是否要压缩
+     * false:测试环境不压缩
+     * true:生产环境或者测试环境压缩
+     */
+    getCompressFlag(){
+        return this.ENV == 'prod' || this.ENV == 'test';
     }
 }
 module.exports = new webpackUtils();
