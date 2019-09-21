@@ -31,7 +31,12 @@ const webpackConfig = {
                 use: [
                     'vue-style-loader',
                     'css-loader',
-                    'sass-loader'
+                    {
+                        loader : 'sass-loader',
+                        options : {
+                            data : '@import "./src/assets/css/color.scss";'
+                        }
+                    }
                 ]
             },
             {

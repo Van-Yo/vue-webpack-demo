@@ -15,6 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .home-area{
-    color: red;
+    height: 100vh;
+    background: $c-bg;
 }
 </style>
