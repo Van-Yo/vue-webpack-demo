@@ -62,3 +62,7 @@ plugins: [
     new webpack.DefinePlugin(globalData),
 ],
 ```
+
+## clean-webpack-plugin
+>webpack 会生成文件，然后将这些文件放置在 /dist 文件夹中，但是 webpack 无法追踪到哪些文件是实际在项目中用到的。通常，在每次构建前清理 /dist 文件夹，是比较推荐的做法，因此只会生成用到的文件。
+

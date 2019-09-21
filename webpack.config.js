@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpackUtils = require('./webpack.utils');
 const config = webpackUtils.getBaseConfig();
 const globalData = webpackUtils.getGlobalData();
@@ -67,6 +68,7 @@ const webpackConfig = {
             filename: 'index.html' 
         }),
         new webpack.DefinePlugin(globalData),
+        new CleanWebpackPlugin(),
     ],
     devServer : {
         contentBase: path.join(__dirname, 'dist'),
