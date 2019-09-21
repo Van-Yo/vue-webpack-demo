@@ -48,3 +48,9 @@ module.exports = webpackConfig;
 ## PostCSS及其插件Autoprefixer
 >Autoprefixer 是一个流行的 PostCSS 插件，其作用是为 CSS 中的属性添加浏览器特定的前缀。由于 CSS 规范的制定和完善一般需要花费比较长的时间，浏览器厂商在实现某个 CSS 新功能时，会使用特定的浏览器前缀来作为正式规范版本之前的实验性实现。比如 Webkit 核心的浏览器使用-webkit-，微软的 IE 使用-ms-。为了兼容不同浏览器的不同版本，在编写 CSS 样式规则声明时通常需要添加额外的带前缀的属性。这是一项繁琐而无趣的工作。Autoprefixer 可以自动的完成这项工作。Autoprefixer 可以根据需要指定支持的浏览器类型和版本，自动添加所需的带前缀的属性声明。开发人员在编写 CSS 时只需要使用 CSS 规范中的标准属性名即可。
 
+## 项目文件路径目录映射
+每次引入文件的时候就不需要再一层一层的查看文件路径，比如：
+```
+// import './src/assets/css/public.scss';
+import '@assets/css/public.scss';
+```

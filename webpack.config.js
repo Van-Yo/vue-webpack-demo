@@ -1,6 +1,8 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const webpackUtils = require('./webpack.utils');
+const config = webpackUtils.getBaseConfig();
 const webpackConfig = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
@@ -36,7 +38,7 @@ const webpackConfig = {
                     {
                         loader : 'sass-loader',
                         options : {
-                            data : '@import "./src/assets/css/color.scss";'
+                            data : '@import "@assets/css/color.scss";'
                         }
                     }
                 ]
@@ -69,6 +71,10 @@ const webpackConfig = {
         host: '0.0.0.0',
         hot: true,
         historyApiFallback: true,
-    }
+    },
+    resolve: {
+        // 依赖
+        alias: config.alias
+    },
 };
 module.exports = webpackConfig;
