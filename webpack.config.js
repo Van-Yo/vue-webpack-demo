@@ -24,6 +24,7 @@ const webpackConfig = {
                 use: [
                     'vue-style-loader',
                     'css-loader',
+                    'postcss-loader',
                 ]
             },
             {
@@ -31,6 +32,7 @@ const webpackConfig = {
                 use: [
                     'vue-style-loader',
                     'css-loader',
+                    'postcss-loader',
                     {
                         loader : 'sass-loader',
                         options : {
