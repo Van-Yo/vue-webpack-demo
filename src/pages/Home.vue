@@ -17,5 +17,9 @@ export default {
 .home-area{
     height: 100vh;
     background: $c-bg;
+    font-size: 0.16rem;
+    img{
+        width: 1.8rem;
+    }
 }
 </style>

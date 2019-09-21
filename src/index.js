@@ -8,3 +8,13 @@ new Vue({
     router,
     render: c => c(app),
 });
+(function () {
+    // window.onresize监听屏幕的改变从而改变默认字体大小
+    var countRem = function () {
+        var documentElement = document.documentElement;
+        var width = documentElement.clientWidth;
+        documentElement.style.fontSize = 100 * (width / 360) + 'px';
+    };
+    countRem();
+    window.onresize = countRem;
+})();

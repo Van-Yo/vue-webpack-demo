@@ -28,3 +28,19 @@ module.exports = webpackConfig;
 
 ## 引入样式重置文件和自定义样式文件(全局)和全局的scss颜色管理文件
 此时首页里一共有三个style内联样式，分别是引入样式重置文件、自定义样式文件和首页自身设置的样式
+
+## rem布局
+```
+(function () {
+    // window.onresize监听屏幕的改变从而改变默认字体大小
+    var countRem = function () {
+        var documentElement = document.documentElement;
+        var width = documentElement.clientWidth;
+        documentElement.style.fontSize = 100 * (width / 360) + 'px';
+    };
+    countRem();
+    window.onresize = countRem;
+})();
+```
+假如width的宽度width就是360px,那么360份每份的宽度就是100px,全局字体也就是100px,1rem等于100px,此时若样式图中图片是180px,就需要除以100等于1.8rem;
+当页面按照此rem定局后,页面样式会随着浏览器宽度变化而等比例变化,包括其中的文字和图片等。
