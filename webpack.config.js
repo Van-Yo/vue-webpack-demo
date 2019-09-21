@@ -61,6 +61,7 @@ const webpackConfig = {
         port: 8087,
         host: '0.0.0.0',
         hot: true,
+        historyApiFallback: true,
     }
 };
 module.exports = webpackConfig;

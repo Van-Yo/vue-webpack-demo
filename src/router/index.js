@@ -18,6 +18,7 @@ let routes = [
     ...baseArr,
 ];
 const index = new VueRouter({
+    mode: 'history',
     routes
 });
 export default index;
