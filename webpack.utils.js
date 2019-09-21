@@ -3,7 +3,9 @@ const path = require('path');
  * webpack构建辅助函数
 */
 class webpackUtils{
-    constructor(){}
+    constructor(){
+        this.ENV = process.env.npm_lifecycle_event;
+    }
     /**
      * 项目文件路径目录映射
      */
@@ -21,7 +23,16 @@ class webpackUtils{
     getBaseConfig(){
         let config = {};
         config.alias = this.getProjectAlias();
+        config.env = this.ENV;
         return config;
+    }
+    /**
+     * 获取全局数据配置
+     */
+    getGlobalData() {
+        return {
+            ENV: JSON.stringify(this.ENV),
+        };
     }
 }
 module.exports = new webpackUtils();

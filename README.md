@@ -54,3 +54,11 @@ module.exports = webpackConfig;
 // import './src/assets/css/public.scss';
 import '@assets/css/public.scss';
 ```
+
+## 获取全局数据配置
+```
+plugins: [
+    //获取全局数据
+    new webpack.DefinePlugin(globalData),
+],
+```

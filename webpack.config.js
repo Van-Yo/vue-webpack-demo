@@ -1,8 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const webpackUtils = require('./webpack.utils');
 const config = webpackUtils.getBaseConfig();
+const globalData = webpackUtils.getGlobalData();
 const webpackConfig = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
@@ -64,6 +66,7 @@ const webpackConfig = {
             template: path.join(__dirname, './src/index.html'), 
             filename: 'index.html' 
         }),
+        new webpack.DefinePlugin(globalData),
     ],
     devServer : {
         contentBase: path.join(__dirname, 'dist'),
