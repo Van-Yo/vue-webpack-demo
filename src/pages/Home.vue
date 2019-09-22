@@ -1,7 +1,9 @@
 <template>
     <section class="home-area">
-        home
-        <img src="../assets/img/home.jpg">
+        <div class="container">
+            <Nodata :showFlag="true"></Nodata>
+        </div>
+        <FooterBar></FooterBar>
     </section>
 </template>
 
@@ -12,17 +14,15 @@ export default {
     },
     created(){
         console.log(ENV);
-    }
+    },
 };
 </script>
 
 <style lang="scss" scoped>
 .home-area{
-    height: 100vh;
-    background: $c-bg;
-    font-size: 0.16rem;
-    img{
-        width: 1.8rem;
+    .container{
+        @include com-container;
+        padding-bottom: 0.48rem;
     }
 }
 </style>

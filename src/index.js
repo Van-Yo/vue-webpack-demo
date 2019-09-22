@@ -3,6 +3,10 @@ import app from './App.vue';
 import router from '@router/index';
 import '@assets/css/public.scss';
 import '@assets/css/reset.css';
+import Nodata from '@components/Nodata.vue';
+import FooterBar from '@components/FooterBar.vue';
+Vue.component('Nodata',Nodata);
+Vue.component('FooterBar',FooterBar);
 new Vue({
     el: '#app',
     router,

@@ -67,3 +67,21 @@ plugins: [
 >webpack 会生成文件，然后将这些文件放置在 /dist 文件夹中，但是 webpack 无法追踪到哪些文件是实际在项目中用到的。通常，在每次构建前清理 /dist 文件夹，是比较推荐的做法，因此只会生成用到的文件。
 
 ## 生产环境和测试环境分块打包及压缩
+
+## 全局组件和全局样式
+- footerBar和noData组件
+- 组件目录映射
+- 挂载到全局vue实例
+- @mixin全局样式,以后只需要@include引入即可
+```
+@mixin com-container(){
+    height: 100vh;
+    background: $c-bg;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.container{
+    @include com-container;
+    padding-bottom: 0.48rem;
+}
+```

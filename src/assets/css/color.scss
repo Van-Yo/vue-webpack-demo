@@ -1,2 +1,9 @@
-$c-theme: #409eff;
+@mixin com-container(){
+    height: 100vh;
+    background: $c-bg;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 $c-bg:#efefef;
+$c-fff:#fff;
