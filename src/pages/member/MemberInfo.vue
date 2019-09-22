@@ -1,7 +1,7 @@
 <template>
-    <section class="home-area">
+    <section class="member-info-area">
         <div class="container">
-            <Nodata :showFlag="true"></Nodata>
+            <p @click="goToDetail()">会员</p>
         </div>
         <FooterBar></FooterBar>
     </section>
@@ -12,14 +12,17 @@ export default {
     data() {
         return {};
     },
-    created(){
-        console.log(ENV);
+    methods: {
+        goToDetail(){
+            this.$router.push('/member/detail');
+        }
     },
+    components: {}
 };
 </script>
 
 <style lang="scss" scoped>
-.home-area{
+.member-info-area{
     .container{
         @include com-container;
     }

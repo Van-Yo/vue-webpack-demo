@@ -1,7 +1,7 @@
 <template>
-    <section class="home-area">
+    <section class="member-detail-area">
         <div class="container">
-            <Nodata :showFlag="true"></Nodata>
+            会员详情
         </div>
         <FooterBar></FooterBar>
     </section>
@@ -12,16 +12,16 @@ export default {
     data() {
         return {};
     },
-    created(){
-        console.log(ENV);
-    },
+    methods: {},
+    components: {}
 };
 </script>
 
 <style lang="scss" scoped>
-.home-area{
+.member-detail-area{
     .container{
         @include com-container;
+        color: red;
     }
 }
 </style>

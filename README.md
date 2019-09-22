@@ -85,3 +85,27 @@ plugins: [
     padding-bottom: 0.48rem;
 }
 ```
+
+## 404页、其他路由模块和页面title
+- 404页面配置,路由：
+```
+const errorList = [{
+    path: '*',
+    redirect: '/error-page'
+}];
+```
+- 路由模块配置，使得打包的时候按照模块来打包
+```
+// /* webpackChunkName: "member" */ 不可省略
+component: () => import(/* webpackChunkName: "member" */'@pages/member/MemberDetail.vue'),
+```
+- 利用路由钩子来配置页面title
+```
+//路由钩子
+index.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = to.meta.title;
+    }
+    next();
+});
+```

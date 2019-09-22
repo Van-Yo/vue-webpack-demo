@@ -1,13 +1,13 @@
 <template>
     <div class="footer-bar">
         <ul class="flex">
-            <li class="flex-1">
+            <router-link class="flex-1" to="/home" tag="li">
                 <img src="@assets/img/components/home.png">
                 首页
-            </li>
-            <li class="flex-1"><img src="@assets/img/components/crown.png">会员</li>
-            <li class="flex-1"><img src="@assets/img/components/list.png">订单</li>
-            <li class="flex-1"><img src="@assets/img/components/man-user.png">我的</li>
+            </router-link>
+            <router-link class="flex-1" to="/member"  tag="li"><img src="@assets/img/components/crown.png">会员</router-link>
+            <router-link class="flex-1" to="/order-list"  tag="li"><img src="@assets/img/components/list.png">订单</router-link>
+            <router-link class="flex-1" to="/personal-info"  tag="li"><img src="@assets/img/components/man-user.png">我的</router-link>
         </ul>
     </div>
 </template>
