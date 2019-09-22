@@ -123,3 +123,8 @@ getSessionStorage(){
 ## mixin混入分发 Vue 组件中的可复用功能(常用的方法)
 - 新建工具类,里面放的是常用的方法，例如base64 url安全编码、计算年龄等
 - 配置全局mixin，并且将工具类放入
+
+## axois请求、请求接口api和请求方法模块化设置
+- 依靠axios请求自定义get和post方法
+- 新建requests文件夹,里面存放所有的api接口和模块化的请求方法
+

@@ -8,12 +8,16 @@
 </template>
 
 <script>
+import HomeRequest from '@requests/modules/homeRequest.js';
 export default {
     data() {
         return {};
     },
     created(){
         console.log(ENV);
+        HomeRequest.weatherSearch({city:'上海'}).then( res => {
+            console.log(res);
+        });
     },
 };
 </script>

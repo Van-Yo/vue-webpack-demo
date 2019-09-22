@@ -9,13 +9,13 @@ class Storage {
     /**
      * set session storage model
      */
-    setSessionStorage(value) {
+    setRequestHeader(value) {
         sessionStorage.setItem(this.header, JSON.stringify(value));
     }
     /**
      * get session storage model
      */
-    getSessionStorage(){
+    getRequestHeader(){
         return JSON.parse(sessionStorage.getItem(this.header) || '{}');
     }
     /**
