@@ -27,9 +27,16 @@ export default {
         goToDetail(){
             Storage.setMemberInfo(this.info);
             this.$router.push('/member/detail');
+        },
+        getAge(){
+            let newAge = this.baseUtils().getAge('1993-02-07');
+            console.log(newAge);
         }
     },
-    components: {}
+    components: {},
+    created(){
+        this.getAge();
+    }
 };
 </script>
 

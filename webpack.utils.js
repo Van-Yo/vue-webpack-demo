@@ -17,6 +17,7 @@ class webpackUtils{
             '@router': path.resolve(__dirname, './src/router'), //路由目录映射
             '@components': path.resolve(__dirname, './src/components'), //组件目录映射
             '@utils': path.resolve(__dirname, './src/utils'), //工具目录映射
+            '@mixins': path.resolve(__dirname, './src/mixins'), //混入目录映射
         };
     }
     /**

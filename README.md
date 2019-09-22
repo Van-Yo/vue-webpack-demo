@@ -119,3 +119,7 @@ getSessionStorage(){
     return JSON.parse(sessionStorage.getItem('header') || '{}');
 }
 ```
+
+## mixin混入分发 Vue 组件中的可复用功能(常用的方法)
+- 新建工具类,里面放的是常用的方法，例如base64 url安全编码、计算年龄等
+- 配置全局mixin，并且将工具类放入

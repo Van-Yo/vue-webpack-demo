@@ -7,6 +7,8 @@ import Nodata from '@components/Nodata.vue';
 import FooterBar from '@components/FooterBar.vue';
 Vue.component('Nodata',Nodata);
 Vue.component('FooterBar',FooterBar);
+import mixin from '@mixins/index.js';
+Vue.mixin(mixin);
 new Vue({
     el: '#app',
     router,
