@@ -109,3 +109,13 @@ index.beforeEach((to, from, next) => {
     next();
 });
 ```
+
+## sessionStorage本地存储
+```
+setSessionStorage(value) {
+    sessionStorage.setItem('header', JSON.stringify(value));
+}
+getSessionStorage(){
+    return JSON.parse(sessionStorage.getItem('header') || '{}');
+}
+```
