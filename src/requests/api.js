@@ -8,7 +8,7 @@ class Api{
         let baseUrl = '';
         switch(ENV){
             case 'start':
-                baseUrl = 'https://www.apiopen.top/';
+                baseUrl = 'http://139.224.227.52/api';
                 break;
             case 'mock':
                 baseUrl = 'http://localhost:8081';
@@ -25,7 +25,7 @@ class Api{
     apiList(){
         let config = {};
         let baseUrl = this.baseUrlJudge();
-        config.weatherSearchApi = `${baseUrl}/weatherApi`;   // 天气查询
+        config.weatherSearchApi = `${baseUrl}/book/findBook`;   // 天气查询
         return config;
     }
 }

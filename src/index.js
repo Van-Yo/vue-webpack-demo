@@ -9,9 +9,11 @@ Vue.component('Nodata',Nodata);
 Vue.component('FooterBar',FooterBar);
 import mixin from '@mixins/index.js';
 Vue.mixin(mixin);
+import store from '@store/index.js';
 new Vue({
     el: '#app',
     router,
+    store,
     render: c => c(app),
 });
 (function () {

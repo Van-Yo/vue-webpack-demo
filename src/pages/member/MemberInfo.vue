@@ -12,6 +12,7 @@
 
 <script>
 import Storage from '@utils/storage.js';
+import { mapGetters } from 'vuex';
 export default {
     data() {
         return {
@@ -22,6 +23,10 @@ export default {
                 tel:'13811111111'
             }
         };
+    },
+    computed: {
+    // mix the getters into computed with object spread operator
+        ...mapGetters('books', ['GET_CARTLIST'])
     },
     methods: {
         goToDetail(){
@@ -36,6 +41,7 @@ export default {
     components: {},
     created(){
         this.getAge();
+        console.log(this.GET_CARTLIST);
     }
 };
 </script>

@@ -19,6 +19,7 @@ class webpackUtils{
             '@utils': path.resolve(__dirname, './src/utils'), //工具目录映射
             '@mixins': path.resolve(__dirname, './src/mixins'), //混入目录映射
             '@requests': path.resolve(__dirname, './src/requests'), //请求接口目录映射
+            '@store': path.resolve(__dirname, './src/store') //请求接口目录映射
         };
     }
     /**
