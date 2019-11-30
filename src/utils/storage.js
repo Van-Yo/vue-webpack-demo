@@ -5,6 +5,7 @@ class Storage {
     constructor() {
         this.header = 'header';
         this.memberInfo = 'memberInfo';
+        this.bridge = 'bridge';     // 桥数据
     }
     /**
      * set session storage model
@@ -29,6 +30,18 @@ class Storage {
      */
     getMemberInfo(){
         return JSON.parse(sessionStorage.getItem(this.memberInfo) || '{}');
+    }
+    /**
+     * set bridge session storage
+     */
+    setBridgeData(value) {
+        sessionStorage.setItem(this.bridge, JSON.stringify(value));
+    }
+    /**
+     * get bridge session storage
+     */
+    getBridgeData(){
+        return JSON.parse(sessionStorage.getItem(this.bridge) || '{}');
     }
 }
 export default new Storage();

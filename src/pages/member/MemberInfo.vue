@@ -12,7 +12,7 @@
 
 <script>
 import Storage from '@utils/storage.js';
-import { mapGetters } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 export default {
     data() {
         return {
@@ -26,7 +26,7 @@ export default {
     },
     computed: {
     // mix the getters into computed with object spread operator
-        ...mapGetters('books', ['GET_CARTLIST'])
+        ...mapGetters('birdge', ['GET_PAYSTATUS','GET_CARTLIST'])
     },
     methods: {
         goToDetail(){
@@ -41,7 +41,9 @@ export default {
     components: {},
     created(){
         this.getAge();
-        console.log(this.GET_CARTLIST);
+        // console.log(this.GET_CARTLIST);
+        // console.log(this.GET_PAYSTATUS);
+        console.log(this.$store.state.birdge);
     }
 };
 </script>
