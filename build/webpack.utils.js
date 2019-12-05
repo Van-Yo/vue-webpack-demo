@@ -12,14 +12,14 @@ class webpackUtils{
     getProjectAlias(){
         return{
             'vue': 'vue/dist/vue.js', //vue 文件映射
-            '@assets': path.resolve(__dirname, './src/assets'), //静态文件目录映射
-            '@pages': path.resolve(__dirname, './src/pages'), //页面目录映射
-            '@router': path.resolve(__dirname, './src/router'), //路由目录映射
-            '@components': path.resolve(__dirname, './src/components'), //组件目录映射
-            '@utils': path.resolve(__dirname, './src/utils'), //工具目录映射
-            '@mixins': path.resolve(__dirname, './src/mixins'), //混入目录映射
-            '@requests': path.resolve(__dirname, './src/requests'), //请求接口目录映射
-            '@store': path.resolve(__dirname, './src/store') //请求接口目录映射
+            '@assets': path.resolve(__dirname, '../src/assets'), //静态文件目录映射
+            '@pages': path.resolve(__dirname, '../src/pages'), //页面目录映射
+            '@router': path.resolve(__dirname, '../src/router'), //路由目录映射
+            '@components': path.resolve(__dirname, '../src/components'), //组件目录映射
+            '@utils': path.resolve(__dirname, '../src/utils'), //工具目录映射
+            '@mixins': path.resolve(__dirname, '../src/mixins'), //混入目录映射
+            '@requests': path.resolve(__dirname, '../src/requests'), //请求接口目录映射
+            '@store': path.resolve(__dirname, '../src/store') //请求接口目录映射
         };
     }
     /**

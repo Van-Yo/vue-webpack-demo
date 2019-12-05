@@ -128,3 +128,8 @@ getSessionStorage(){
 - 依靠axios请求自定义get和post方法
 - 新建requests文件夹,里面存放所有的api接口和模块化的请求方法
 
+## 配置webpack不同环境下的打包配置
+- 开发环境
+- 测试环境
+- 生产环境
+
