@@ -1,6 +1,7 @@
 const type = {
     SET_CARTList : 'SET_CARTList',      //【存数据】购物车列表
     GET_CARTLIST : 'GET_CARTLIST'       //【取数据】购物车列表
+
 };
 
 const state = {

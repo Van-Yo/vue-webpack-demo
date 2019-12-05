@@ -16,7 +16,7 @@
 
 <script>
 import HomeRequest from '@requests/modules/homeRequest.js';
-import { mapMutations, mapGetters, mapActions } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 export default {
     data() {
         return {
@@ -24,11 +24,10 @@ export default {
         };
     },
     computed: {
-        ...mapGetters('books', ['GET_CARTLIST'])
+        ...mapGetters('birdge', ['GET_PAYSTATUS','GET_CARTLIST'])
     },
     methods:{
-        ...mapMutations('books',['SET_CARTList']),
-        ...mapActions('books',['addBookData'])
+        ...mapMutations('birdge',['SET_PAYSTATUS','SET_CARTLIST'])
     },
     created(){
         // console.log(ENV);
@@ -43,6 +42,11 @@ export default {
         console.log(this.GET_CARTLIST); */
         // this.SET_CARTList([{name:'水浒传'}]);
         // console.log(this.getCartList);
+        this.SET_PAYSTATUS('2');
+        this.SET_CARTLIST({name:'红楼梦',price:25,num:2})
+        console.log(this.$store.state.birdge);
+        // console.log(this.GET_CARTLIST);
+        
     },
 };
 </script>

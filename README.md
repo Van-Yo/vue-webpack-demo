@@ -133,3 +133,13 @@ getSessionStorage(){
 - 测试环境
 - 生产环境
 
+## vuex设置
+- 设置type值，以后所有关于存取状态值，都需要从type值里拿，方便管理
+- 获取state里面的值从getters里拿，设置state里面的值从mutations里的方法修改，actions里面的方法主要是用于异步方法再commit mutations里面的方法
+- 在/store/index.js文件中配置了自动配置模块化状态管理，不需要手动引用
+
+## vuex和session storage数据桥关联设置
+- 为了解决vuex页面刷新时数据会丢失的问题
+- 更新本地数据，将vuex里面的数据同步到本地数据中。作用：数据同步到本地，以后页面刷新就能从本地拿数据了，防止vuex数据丢失
+- 更新vuex数据，将本地数据同步到vuex里面的数据中。作用：防止刷新页面vuex中的数据初始化
+
