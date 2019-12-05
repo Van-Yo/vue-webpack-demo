@@ -1,9 +1,15 @@
+/**
+ * @Author: Vanlus
+ * @Description: 基础的webpack配置项
+ * @Date: 2019/12/5 19:42:03
+ */
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const webpackUtils = require('./webpack.utils');
 const config = webpackUtils.getBaseConfig();
 const globalData = webpackUtils.getGlobalData();
@@ -18,8 +24,8 @@ const webpackConfig = {
         splitChunks: {
             chunks: 'all',
             cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
+                vendors: {
+                    test: /[\\/]node_modules[\\/](vue|vuex|vue-router|axios)[\\/]/,
                     name: 'vendors',
                     chunks: 'all'
                 },
@@ -29,7 +35,7 @@ const webpackConfig = {
                     chunks: 'all'
                 }
             }
-        },
+        }
     },
     module: {
         //  webpack 加载各式各样的文件所需要的 loader
@@ -60,10 +66,15 @@ const webpackConfig = {
         new VueLoaderPlugin(),
         new htmlWebpackPlugin({
             template: path.join(__dirname, '../src/index.html'), 
-            filename: 'index.html' 
+            filename: 'index.html',
+            // index.html压缩
+            minify: {
+                collapseWhitespace: true
+            }
         }),
         new webpack.DefinePlugin(globalData),
         new CleanWebpackPlugin(),
+        // 文件拷贝
         new CopyWebpackPlugin([{
             from:'src/assets/static',
             to: 'assets/static',
@@ -72,7 +83,9 @@ const webpackConfig = {
     ],
     resolve: {
         // 依赖
-        alias: config.alias
+        alias: config.alias,
+        // 引入下列后缀的文件时后缀可省略
+        extensions: ['.js', '.vue']
     },
 };
 module.exports = webpackConfig;

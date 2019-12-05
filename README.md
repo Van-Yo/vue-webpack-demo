@@ -128,11 +128,6 @@ getSessionStorage(){
 - 依靠axios请求自定义get和post方法
 - 新建requests文件夹,里面存放所有的api接口和模块化的请求方法
 
-## 配置webpack不同环境下的打包配置
-- 开发环境
-- 测试环境
-- 生产环境
-
 ## vuex设置
 - 设置type值，以后所有关于存取状态值，都需要从type值里拿，方便管理
 - 获取state里面的值从getters里拿，设置state里面的值从mutations里的方法修改，actions里面的方法主要是用于异步方法再commit mutations里面的方法
@@ -143,3 +138,8 @@ getSessionStorage(){
 - 更新本地数据，将vuex里面的数据同步到本地数据中。作用：数据同步到本地，以后页面刷新就能从本地拿数据了，防止vuex数据丢失
 - 更新vuex数据，将本地数据同步到vuex里面的数据中。作用：防止刷新页面vuex中的数据初始化
 
+## 配置webpack不同环境下的打包配置
+> development(开发环境) 和 production(生产环境) 这两个环境下的构建目标存在着巨大差异。在开发环境中，我们需要：强大的 source map 和一个有着 live reloading(实时重新加载) 或 hot module replacement(热模块替换) 能力的 localhost server。而生产环境目标则转移至其他方面，关注点在于压缩 bundle、更轻量的 source map、资源优化等，通过这些优化方式改善加载时间。由于要遵循逻辑分离，我们通常建议为每个环境编写彼此独立的 webpack 配置。
+- 开发环境
+- 测试环境
+- 生产环境

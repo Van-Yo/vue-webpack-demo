@@ -8,14 +8,16 @@ module.exports = {
         allowImportExportEverywhere: true
     },
     rules: {
-        "semi": ["warn",
+        /* "semi": ["warn",
             "always"
-        ],
-        "no-unused-vars" : ["warn",{
+        ], */
+        "semi": "off",
+        /* "no-unused-vars" : ["warn",{
             "args": "none",
             "vars": "local",
             "args": "none"
-        }],
+        }], */
+        "no-unused-vars":"off",
         "quotes": [
             "warn",
             "single"
