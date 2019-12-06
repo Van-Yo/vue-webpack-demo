@@ -14,10 +14,10 @@ const webpackUtils = require('./webpack.utils');
 const config = webpackUtils.getBaseConfig();
 const globalData = webpackUtils.getGlobalData();
 const webpackConfig = {
-    entry: path.resolve(__dirname, '../src/index.js'),
+    entry: config.entry,
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        publicPath: '/'
+        path: config.outDir,
+        publicPath: config.publicPath
     },
     mode: 'development',
     optimization: {
@@ -65,7 +65,7 @@ const webpackConfig = {
     plugins: [
         new VueLoaderPlugin(),
         new htmlWebpackPlugin({
-            template: path.join(__dirname, '../src/index.html'), 
+            template: config.templatePath, 
             filename: 'index.html',
             // index.html压缩
             minify: {
@@ -76,7 +76,7 @@ const webpackConfig = {
         new CleanWebpackPlugin(),
         // 文件拷贝
         new CopyWebpackPlugin([{
-            from:'src/assets/static',
+            from:config.staticPath,
             to: 'assets/static',
             toType: 'dir'
         }])

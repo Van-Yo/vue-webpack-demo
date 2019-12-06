@@ -8,6 +8,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 
 const base = require('./webpack.base.config.js');
+const webpackUtils = require('./webpack.utils');
+const config = webpackUtils.getBaseConfig();
 const webpackConfig = merge(base,{
     output: {
         filename: 'js/[name].bundle.js',
@@ -51,7 +53,7 @@ const webpackConfig = merge(base,{
                 options: {
                     limit: '4096',
                     name: 'assets/img/[name].[ext]',
-                    publicPath: '/'
+                    publicPath: config.publicPath
                 }
             }]
         }]
@@ -60,7 +62,7 @@ const webpackConfig = merge(base,{
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, `../dist/${config.projectName}-H5`),
         port: 8087,
         host: '0.0.0.0',
         hot: true,

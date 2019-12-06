@@ -31,7 +31,7 @@ export default {
     },
     created(){
         // console.log(ENV);
-        HomeRequest.weatherSearch({searchString:'大'}).then( res => {
+        HomeRequest.findBooksRequest({searchString:'大'}).then( res => {
             if(res.data && res.data.length){
                 this.booksList = res.data;
             }
